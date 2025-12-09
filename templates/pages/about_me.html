@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} About {% endblock title %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/about_me.css' %}" />
+{% endblock css %}
+
+{% block content %}
+<section class="container my-5">
+    <div class="row align-items-center">
+        <!-- Profile Picture -->
+        <div class="col-md-4 text-center mb-4">
+            <img src="{% static 'img/profile.jpg' %}" alt="Profile Picture" class="img-fluid rounded-circle shadow" style="max-width: 200px;">
+        </div>
+
+        <!-- About Me -->
+         <div class="col-md-8">
+            <h1>About Me</h1>
+            <p>Hello! I’m <strong>Jake Rivera</strong>, a Full Stack Developer in training for my FSDI-117 class. I’m learning to build responsive, dynamic web applications using Django, HTML, CSS, JavaScript, and Bootstrap.</p>
+            
+            <p>During this course, I’ve focused on creating clean, maintainable code, understanding the MVC pattern in Django, and connecting front-end and back-end components effectively. I enjoy solving challenges, learning new technologies, and improving my development skills every day.</p>
+            
+            <p>Outside of coding, I enjoy playing video games, driving around listening to music, and Trading Futures contracts.</p>
+            
+            <a href="{% url 'experience' %}" class="btn btn-primary mt-3">View My Experience</a>
+        </div>
+    </div>
+</section>
+{% endblock content %}
