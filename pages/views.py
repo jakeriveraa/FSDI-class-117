@@ -31,7 +31,7 @@ def contact_view(request):
                     f'Portfolio Contact: {name}',
                     message_body,
                     email,
-                    recipient_list=['jake.riveraa@gmail.com']
+                    recipient_list=['']
                     
                 )
                 form = contactForm()
