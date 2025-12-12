@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Contact{% endblock title %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="glass-form">
+    <h1>Contact Me</h1>
+
+ 
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+       <div class="button-group">
+        <button type="submit">Send</button>
+        <button type="reset">Reset</button>
+    </div>
+    </form>
+</div>
+{% endblock content %}

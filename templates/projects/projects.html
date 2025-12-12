@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Projects{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/projects.css' %}" />
+{% endblock %}
+
+{% block content %}
+<main class="projects-section py-5 flex-grow-1">
+    <div class="container">
+        <h2 class="text-center mb-5 top-text">Projects</h2>
+        <div class="row justify-content-center">
+           {% for project in projects %}
+            <!-- Project 1 Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <a href="{{project.repository}}" target="_blank">
+                        <img src="{{project.image.url}}" class="card-img-top" alt="Coffee Blog">
+                    </a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{project.title}}</h5>
+                        <p class="card-text">{{project.description}}</p>
+                        <p class="text-muted mt-auto">{{project.year}}</p>
+                        {% for skill in project.skills.all %}
+                        <label class="text-label">{{skill.name}}</label> 
+                        {% endfor %}   
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+            
+        </div>
+    </div>
+</main>
+{% endblock %}

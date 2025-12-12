@@ -16,9 +16,16 @@
           <a class="nav-link {% if request.resolver_match.url_name == 'about_me' %}active{% endif %}"
              href="{% url 'about_me' %}">About Me</a>
         </li>
-        <li class="nav-item">
+         <li class="nav-item">
+          <a class="nav-link {% if request.resolver_match.url_name == 'projects' %}active{% endif %}"href="{% url 'projects' %}">Projects</a>
+        </li>
+        <li>
           <a class="nav-link {% if request.resolver_match.url_name == 'experience' %}active{% endif %}"
              href="{% url 'experience' %}">Experience</a>
+        </li>
+        <li>
+          <a class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}"
+             href="{% url 'contact' %}">Contact</a>
         </li>
       </ul>
     </div>
