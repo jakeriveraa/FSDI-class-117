@@ -37,9 +37,12 @@ def contact_view(request):
                 form = contactForm()
                 return render(request, 'pages/contact.html', {'form': form})
             except Exception as e:
-                print(f'Error sending email: {e}')
-                
+                print(f'Error sending email: {e}')                
                 return render(request, 'pages/contact.html', {'form': form})
+
+        else:
+            return render(request, 'pages/contact.html', {'form': form})
+    
     else:
         form = contactForm()
     
